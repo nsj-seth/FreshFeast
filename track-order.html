@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your FreshFeast order in real-time">
+  <title>Track Order - FreshFeast</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/track-order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">FreshFeast</a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="support.html" class="nav-link">Support</a></li>
+        <li><a href="preferences.html" class="nav-link">Settings</a></li>
+        <li><a href="cart.html" class="nav-link" style="position: relative;">🛒 Cart <span class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="padding: var(--spacing-2xl) 0;">
+    <div class="container">
+      <h1 style="text-align: center;">Track Your Order</h1>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto;">Enter your order number to see real-time updates</p>
+    </div>
+  </section>
+
+  <!-- Track Order Form -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="track-form-container">
+        <form class="track-form" id="trackOrderForm">
+          <div class="form-group">
+            <label for="orderNumber">Order Number</label>
+            <input type="text" id="trackOrderNumber" placeholder="ORD-12345678" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Track Order</button>
+        </form>
+      </div>
+
+      <!-- Order Status (Hidden by default) -->
+      <div class="order-status-container" id="orderStatusContainer" style="display: none;">
+        <div class="order-header">
+          <div>
+            <h2>Order <span id="displayOrderNumber">#ORD-12345678</span></h2>
+            <p>Placed on <span id="orderDate">March 3, 2026</span></p>
+          </div>
+          <div class="order-status-badge" id="orderStatusBadge">Preparing</div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="order-timeline">
+          <div class="timeline-item completed">
+            <div class="timeline-icon">✓</div>
+            <div class="timeline-content">
+              <strong>Order Placed</strong>
+              <p>We've received your order</p>
+              <span class="timeline-time">2:30 PM</span>
+            </div>
+          </div>
+          
+          <div class="timeline-item completed">
+            <div class="timeline-icon">✓</div>
+            <div class="timeline-content">
+              <strong>Order Confirmed</strong>
+              <p>Restaurant is preparing your food</p>
+              <span class="timeline-time">2:32 PM</span>
+            </div>
+          </div>
+          
+          <div class="timeline-item active">
+            <div class="timeline-icon">🍳</div>
+            <div class="timeline-content">
+              <strong>Preparing</strong>
+              <p>Your food is being prepared with care</p>
+              <span class="timeline-time">In Progress</span>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🚚</div>
+            <div class="timeline-content">
+              <strong>Out for Delivery</strong>
+              <p>Driver is on the way</p>
+              <span class="timeline-time">Pending</span>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🎉</div>
+            <div class="timeline-content">
+              <strong>Delivered</strong>
+              <p>Enjoy your meal!</p>
+              <span class="timeline-time">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Details -->
+        <div class="order-details-grid">
+          <!-- Delivery Info -->
+          <div class="detail-card">
+            <h3>Delivery Address</h3>
+            <p><strong>John Doe</strong></p>
+            <p>KNUST Campus</p>
+            <p style="margin-top: var(--spacing-md);"><strong>Phone:</strong> 0243521850</p>
+          </div>
+
+          <!-- Order Items -->
+          <div class="detail-card">
+            <h3>Order Items</h3>
+            <div class="order-item-list">
+              <div class="order-item-row">
+                <span>2x Classic Smash Burger</span>
+                <span>$29.98</span>
+              </div>
+              <div class="order-item-row">
+                <span>1x Garden Fresh Bowl</span>
+                <span>$16.99</span>
+              </div>
+              <div class="order-item-row">
+                <span>1x Iced Coffee</span>
+                <span>$5.99</span>
+              </div>
+              <div class="order-item-row" style="border-top: 2px solid var(--border); margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); font-weight: 700;">
+                <span>Total</span>
+                <span style="color: var(--primary);">$52.96</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Driver Info (shown when out for delivery) -->
+          <div class="detail-card">
+            <h3>Estimated Delivery</h3>
+            <div style="text-align: center; padding: var(--spacing-xl);">
+              <div style="font-size: var(--text-4xl); font-weight: 700; color: var(--primary); margin-bottom: var(--spacing-sm);">15-20 min</div>
+              <p>Your order will arrive soon!</p>
+            </div>
+          </div>
+
+          <!-- Help -->
+          <div class="detail-card">
+            <h3>Need Help?</h3>
+            <p style="margin-bottom: var(--spacing-md);">Have questions about your order?</p>
+            <a href="support.html" class="btn btn-accent" style="width: 100%; text-align: center;">Contact Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>FreshFeast</h3>
+          <p>Fresh, delicious meals delivered to your door. Made with love, served with care.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: 0243521850</p>
+          <p>Email: info@freshfeast.com</p>
+          <p>Address: KNUST Campus</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 FreshFeast. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

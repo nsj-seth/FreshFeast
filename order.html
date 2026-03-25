@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place your food order online">
+  <title>Order Now - FreshFeast</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">FreshFeast</a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="support.html" class="nav-link">Support</a></li>
+        <li><a href="preferences.html" class="nav-link">⚙️ Settings</a></li>
+        <li><a href="cart.html" class="nav-link" style="position: relative;"><i class="fa-solid fa-cart-arrow-down"></i> Cart <span class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="padding: var(--spacing-2xl) 0;">
+    <div class="container">
+      <h1 style="text-align: center;">Place Your Order</h1>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto;">Select your favorite dishes and submit your order. We'll prepare it fresh for you!</p>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="order-layout">
+        <!-- Order Items Selection -->
+        <div class="order-items">
+          <h2>Select Your Items</h2>
+          <div class="order-menu-grid" id="orderMenuGrid">
+            <!-- Menu items will be dynamically loaded here -->
+          </div>
+        </div>
+
+        <!-- Order Cart -->
+        <div class="order-cart">
+          <h2>Your Order</h2>
+          <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty. Add items to get started!</p>
+          </div>
+          
+          <div class="cart-summary" id="cartSummary" style="display: none;">
+            <div class="cart-total">
+              <span>Subtotal:</span>
+              <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-total">
+              <span>Tax (10%):</span>
+              <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-total cart-grand-total">
+              <span>Total:</span>
+              <span id="cartTotal">$0.00</span>
+            </div>
+          </div>
+
+          <!-- Customer Information Form -->
+          <form class="order-form" id="orderForm" style="display: none;">
+            <h3>Your Information</h3>
+            
+            <div class="form-group">
+              <label for="customerName">Full Name *</label>
+              <input type="text" id="customerName" name="customerName" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="customerPhone">Phone Number *</label>
+              <input type="tel" id="customerPhone" name="customerPhone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="customerEmail">Email</label>
+              <input type="email" id="customerEmail" name="customerEmail">
+            </div>
+            
+            <div class="form-group">
+              <label for="deliveryAddress">Delivery Address *</label>
+              <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="specialInstructions">Special Instructions</label>
+              <textarea id="specialInstructions" name="specialInstructions" rows="2" placeholder="Any allergies or special requests?"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal" id="orderConfirmModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Order Confirmed! 🎉</h2>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for your order! We've received it and will start preparing your delicious meal.</p>
+        <p><strong>Order ID:</strong> <span id="orderIdDisplay"></span></p>
+        <p>We'll contact you shortly to confirm the delivery details.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="closeModalBtn">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>FreshFeast</h3>
+          <p>Fresh, delicious meals delivered to your door. Made with love, served with care.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: 0243521850</p>
+          <p>Email: info@freshfeast.com</p>
+          <p>Address: KNUST Campus</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 FreshFeast. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

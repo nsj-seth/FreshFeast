@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshFeast - Fresh, delicious meals delivered to your door">
+  <title>FreshFeast - Home | Fresh Food Delivered</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">FreshFeast</a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="support.html" class="nav-link">Support</a></li>
+        <li><a href="preferences.html" class="nav-link">Settings</a></li>
+        <li><a href="cart.html" class="nav-link" style="position: relative;"><i class="fa-solid fa-cart-arrow-down"></i> Cart <span class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        
+        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-truck-fast"></i> Fresh & Locally Sourced</p>
+        <h1>Delicious Food, <span style="color: var(--primary);">Delivered Fresh</span></h1>
+        <p>Experience the finest flavors with our carefully crafted dishes. From farm to table, we bring you meals that nourish your body and soul.</p>
+        <div class="hero-buttons">
+          <a href="menu.html" class="btn btn-primary">Explore Menu →</a>
+          <a href="order.html" class="btn btn-accent" style="background: white; color: var(--foreground); border: 2px solid var(--border);">How It Works</a>
+        </div>
+        <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;"><i class="fa-regular fa-clock"></i></span>
+            <span style="font-size: 0.875rem; opacity: 0.8;"><strong>30 min</strong> delivery</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;"><i class="fa-solid fa-star"></i></span>
+            <span style="font-size: 0.875rem; opacity: 0.8;"><strong>4.8</strong> rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Meals Section -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Our <span style="color: var(--primary);">Favorites</span></h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-2xl); color: hsl(25, 30%, 40%);">Discover our most loved dishes, crafted with passion and the finest ingredients</p>
+      
+      <div class="meals-grid" id="popularMeals">
+        <!-- Popular meals will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section-padding" style="background-color: var(--background);">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">How It <span style="color: var(--primary);">Works</span></h2>
+      <div class="how-it-works-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Browse Menu</h3>
+          <p>Explore our diverse selection of dishes</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Place Order</h3>
+          <p>Customize and add items to your cart</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Enjoy!</h3>
+          <p>Fast delivery right to your doorstep</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Why Choose Us?</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Quality Food</h3>
+          <p>We use only the finest and freshest ingredients in all our dishes.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Fast Service</h3>
+          <p>Quick preparation and delivery without compromising on quality.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+          <h3>Affordable Prices</h3>
+          <p>Great food at prices that won't break the bank.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Easy Ordering</h3>
+          <p>Simple online ordering system for your convenience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>FreshFeast</h3>
+          <p>Fresh, delicious meals delivered to your door. Made with love, served with care.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: 0243521850</p>
+          <p>Email: info@freshfeast.com</p>
+          <p>Address: KNUST Campus</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 FreshFeast. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+/* ===================================
+   Preferences/Settings Page Styles
+   =================================== */
+
+.preferences-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+/* Settings Sidebar */
+.settings-sidebar {
+  position: sticky;
+  top: calc(var(--spacing-xl) + 60px);
+}
+
+.settings-nav {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  font-weight: 500;
+  transition: var(--transition-base);
+  margin-bottom: var(--spacing-xs);
+}
+
+.settings-nav-item span {
+  font-size: var(--text-xl);
+}
+
+.settings-nav-item:hover {
+  background-color: var(--muted);
+}
+
+.settings-nav-item.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Settings Content */
+.settings-content {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.settings-section {
+  display: none;
+}
+
+.settings-section.active {
+  display: block;
+}
+
+.settings-section h2 {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.section-description {
+  color: hsl(25, 30%, 40%);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Settings Form */
+.settings-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.settings-form .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.settings-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.settings-form input,
+.settings-form select,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: var(--transition-base);
+}
+
+.settings-form input:focus,
+.settings-form select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Preference Cards */
+.preference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.preference-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-base);
+  background-color: white;
+}
+
+.preference-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.preference-card input[type="checkbox"] {
+  display: none;
+}
+
+.preference-card input[type="checkbox"]:checked + .preference-icon {
+  transform: scale(1.2);
+}
+
+.preference-card input[type="checkbox"]:checked ~ .preference-label {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.preference-card:has(input:checked) {
+  border-color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.preference-icon {
+  font-size: 3rem;
+  transition: var(--transition-base);
+}
+
+.preference-label {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Allergy Tags */
+.allergy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.tag-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-base);
+  background-color: white;
+}
+
+.tag-checkbox:hover {
+  border-color: var(--primary);
+}
+
+.tag-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.tag-checkbox:has(input:checked) {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Toggle Switch */
+.toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--background);
+}
+
+.toggle-item strong {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.toggle-item p {
+  margin: 0;
+  color: hsl(25, 30%, 40%);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--border);
+  border-radius: var(--radius-full);
+  transition: var(--transition-base);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: var(--transition-base);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--accent);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* Address Cards */
+.address-list {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.address-card {
+  position: relative;
+  padding: var(--spacing-xl);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: white;
+}
+
+.address-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--accent);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.address-card strong {
+  display: block;
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.address-card p {
+  margin: 0;
+  color: hsl(25, 30%, 40%);
+}
+
+.address-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Payment Cards */
+.payment-list {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: white;
+}
+
+.payment-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--muted);
+  border-radius: var(--radius-md);
+}
+
+.payment-info {
+  flex: 1;
+}
+
+.payment-info strong {
+  display: block;
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.payment-info p {
+  margin: 0;
+  color: hsl(25, 30%, 40%);
+}
+
+.payment-badge {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--accent);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .preferences-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-sidebar {
+    position: static;
+  }
+
+  .settings-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .settings-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .preference-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}

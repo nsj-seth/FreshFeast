@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your FreshFeast preferences and settings">
+  <title>Preferences - FreshFeast</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/preferences.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">FreshFeast</a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="support.html" class="nav-link">Support</a></li>
+        <li><a href="preferences.html" class="nav-link active"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        <li><a href="cart.html" class="nav-link" style="position: relative;"><i class="fa-solid fa-cart-arrow-down"></i> Cart <span class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="padding: var(--spacing-2xl) 0;">
+    <div class="container">
+      <h1 style="text-align: center;">Preferences & Settings</h1>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto;">Customize your FreshFeast experience</p>
+    </div>
+  </section>
+
+  <!-- Preferences Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="preferences-layout">
+        <!-- Settings Menu -->
+        <div class="settings-sidebar">
+          <nav class="settings-nav">
+            <a href="#profile" class="settings-nav-item active" data-section="profile">
+              <span>👤</span> Profile
+            </a>
+            <a href="#dietary" class="settings-nav-item" data-section="dietary">
+              <span>🥗</span> Dietary Preferences
+            </a>
+            <a href="#notifications" class="settings-nav-item" data-section="notifications">
+              <span>🔔</span> Notifications
+            </a>
+            <a href="#delivery" class="settings-nav-item" data-section="delivery">
+              <span>🚚</span> Delivery Settings
+            </a>
+            <a href="#payment" class="settings-nav-item" data-section="payment">
+              <span>💳</span> Payment Methods
+            </a>
+            <a href="#privacy" class="settings-nav-item" data-section="privacy">
+              <span>🔒</span> Privacy & Security
+            </a>
+          </nav>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+          <!-- Profile Section -->
+          <div class="settings-section active" id="profile">
+            <h2>Profile Information</h2>
+            <form class="settings-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" value="John">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" value="Doe">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" value="john.doe@example.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" value="+1 234 567 8900">
+              </div>
+              
+              <div class="form-group">
+                <label for="birthday">Birthday (Optional)</label>
+                <input type="date" id="birthday">
+              </div>
+              
+              <button type="button" class="btn btn-primary">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Dietary Preferences Section -->
+          <div class="settings-section" id="dietary">
+            <h2>Dietary Preferences</h2>
+            <p class="section-description">Help us recommend dishes that match your dietary needs</p>
+            
+            <div class="preference-grid">
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="vegetarian">
+                <span class="preference-icon">🥬</span>
+                <span class="preference-label">Vegetarian</span>
+              </label>
+              
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="vegan">
+                <span class="preference-icon">🌱</span>
+                <span class="preference-label">Vegan</span>
+              </label>
+              
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="gluten-free">
+                <span class="preference-icon">🌾</span>
+                <span class="preference-label">Gluten-Free</span>
+              </label>
+              
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="dairy-free">
+                <span class="preference-icon">🥛</span>
+                <span class="preference-label">Dairy-Free</span>
+              </label>
+              
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="halal">
+                <span class="preference-icon">🕌</span>
+                <span class="preference-label">Halal</span>
+              </label>
+              
+              <label class="preference-card">
+                <input type="checkbox" name="dietary" value="kosher">
+                <span class="preference-icon">✡️</span>
+                <span class="preference-label">Kosher</span>
+              </label>
+            </div>
+            
+            <h3 style="margin-top: var(--spacing-xl);">Allergies</h3>
+            <div class="allergy-tags">
+              <label class="tag-checkbox">
+                <input type="checkbox" name="allergy" value="nuts">
+                <span>🥜 Nuts</span>
+              </label>
+              <label class="tag-checkbox">
+                <input type="checkbox" name="allergy" value="shellfish">
+                <span>🦐 Shellfish</span>
+              </label>
+              <label class="tag-checkbox">
+                <input type="checkbox" name="allergy" value="eggs">
+                <span>🥚 Eggs</span>
+              </label>
+              <label class="tag-checkbox">
+                <input type="checkbox" name="allergy" value="soy">
+                <span>🫘 Soy</span>
+              </label>
+              <label class="tag-checkbox">
+                <input type="checkbox" name="allergy" value="dairy">
+                <span>🧀 Dairy</span>
+              </label>
+            </div>
+            
+            <button type="button" class="btn btn-primary" style="margin-top: var(--spacing-xl);">Save Preferences</button>
+          </div>
+
+          <!-- Notifications Section -->
+          <div class="settings-section" id="notifications">
+            <h2>Notification Preferences</h2>
+            
+            <div class="toggle-list">
+              <div class="toggle-item">
+                <div>
+                  <strong>Order Updates</strong>
+                  <p>Get notified about your order status</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="toggle-item">
+                <div>
+                  <strong>Promotions & Offers</strong>
+                  <p>Receive special deals and discounts</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="toggle-item">
+                <div>
+                  <strong>New Menu Items</strong>
+                  <p>Be the first to know about new dishes</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="toggle-item">
+                <div>
+                  <strong>Email Newsletter</strong>
+                  <p>Weekly updates and food tips</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="toggle-item">
+                <div>
+                  <strong>SMS Notifications</strong>
+                  <p>Text messages for order updates</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Settings Section -->
+          <div class="settings-section" id="delivery">
+            <h2>Delivery Addresses</h2>
+            
+            <div class="address-list">
+              <div class="address-card">
+                <div class="address-badge">Default</div>
+                <strong>Home</strong>
+                <p>KNUST Campus</p>
+                <div class="address-actions">
+                  <button class="btn-link">Edit</button>
+                  <button class="btn-link">Remove</button>
+                </div>
+              </div>
+              
+              <div class="address-card">
+                <strong>Work</strong>
+                <p>456 Office Plaza<br>Business District, FC 54321</p>
+                <div class="address-actions">
+                  <button class="btn-link">Set as Default</button>
+                  <button class="btn-link">Edit</button>
+                  <button class="btn-link">Remove</button>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn btn-accent" style="margin-top: var(--spacing-lg);">+ Add New Address</button>
+            
+            <h3 style="margin-top: var(--spacing-2xl);">Delivery Instructions</h3>
+            <textarea class="form-textarea" rows="4" placeholder="Special delivery instructions (e.g., gate code, where to leave package)"></textarea>
+            
+            <button type="button" class="btn btn-primary" style="margin-top: var(--spacing-md);">Save Instructions</button>
+          </div>
+
+          <!-- Payment Methods Section -->
+          <div class="settings-section" id="payment">
+            <h2>Payment Methods</h2>
+            
+            <div class="payment-list">
+              <div class="payment-card">
+                <div class="payment-icon">💳</div>
+                <div class="payment-info">
+                  <strong>Visa ending in 4242</strong>
+                  <p>Expires 12/2027</p>
+                </div>
+                <div class="payment-badge">Default</div>
+              </div>
+              
+              <div class="payment-card">
+                <div class="payment-icon">💳</div>
+                <div class="payment-info">
+                  <strong>Mastercard ending in 8888</strong>
+                  <p>Expires 06/2028</p>
+                </div>
+                <button class="btn-link">Remove</button>
+              </div>
+            </div>
+            
+            <button class="btn btn-accent" style="margin-top: var(--spacing-lg);">+ Add Payment Method</button>
+          </div>
+
+          <!-- Privacy Section -->
+          <div class="settings-section" id="privacy">
+            <h2>Privacy & Security</h2>
+            
+            <div class="toggle-list">
+              <div class="toggle-item">
+                <div>
+                  <strong>Save Order History</strong>
+                  <p>Keep track of your previous orders</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="toggle-item">
+                <div>
+                  <strong>Share Data for Recommendations</strong>
+                  <p>Help us suggest dishes you'll love</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            
+            <h3 style="margin-top: var(--spacing-2xl);">Account Actions</h3>
+            <div class="action-buttons">
+              <button class="btn btn-primary">Change Password</button>
+              <button class="btn" style="border: 2px solid var(--border);">Download My Data</button>
+              <button class="btn" style="border: 2px solid hsl(0, 70%, 50%); color: hsl(0, 70%, 50%);">Delete Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>FreshFeast</h3>
+          <p>Fresh, delicious meals delivered to your door. Made with love, served with care.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: 0243521850</p>
+          <p>Email: info@freshfeast.com</p>
+          <p>Address: KNUST Campus</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 FreshFeast. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
